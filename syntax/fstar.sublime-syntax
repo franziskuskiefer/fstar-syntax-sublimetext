@@ -23,7 +23,6 @@ contexts:
     - include: operators
 
   keywords:
-    # Keywords are if, else for and while.
     # Note that blackslashes don't need to be escaped within single quoted
     # strings in YAML. When using single quoted strings, only single quotes
     # need to be escaped: this is done by using two single quotes next to each
@@ -46,8 +45,14 @@ contexts:
   operators:
     - match: '(->|<-)'
       scope: storage.type.function.source.fst
-    - match: '(\+|-|\*|\/|\%)(?!>)'
+    - match: '(\+\.|\+|-\.|-|\*\.|\*|\/\.|\/|\%|(\&\.)|\&|\|\.|\||\^|\~)(?!>)'
       scope: keyword.operator.source.fst
+    - match: '\`'
+      scope: keyword.operator.source.fst
+      push:
+        - meta_scope: keyword.operator.source.fst
+        - match: '\`'
+          pop: true
 
   numbers:
     - match: '\b(-)?[0-9]+(.)?[0-9]*\b'
