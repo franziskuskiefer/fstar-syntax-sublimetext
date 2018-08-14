@@ -1,0 +1,13 @@
+{
+  "name": "fstar-synrax",
+  "version": "0.1.0",
+  "author": "Franziskus Kiefer <franziskuskiefer@gmail.com>",
+  "description": "FStar Syntax Highlighting",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/franziskuskiefer/fstar-syntax-sublimetext.git"
+  },
+  "license": "MPL 2.0"
+}
